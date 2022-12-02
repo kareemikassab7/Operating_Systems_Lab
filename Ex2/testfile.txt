@@ -1,0 +1,5 @@
+total 24
+-rwxr-xr-x 1 kareemikassab kareemikassab 13352 Feb 20 14:24 MyShell
+-rw-rw-r-- 1 kareemikassab kareemikassab  2071 Feb 20 14:23 MyShell.c
+drwxrwxr-x 2 kareemikassab kareemikassab  4096 Feb 19 21:09 testdir
+-rw-r--r-- 1 kareemikassab kareemikassab     0 Feb 20 15:02 testfile.txt

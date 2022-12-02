@@ -1,0 +1,1 @@
+cmd_/home/kareemikassab/OSlab/lab8/procfMod.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/kareemikassab/OSlab/lab8/procfMod.ko /home/kareemikassab/OSlab/lab8/procfMod.o /home/kareemikassab/OSlab/lab8/procfMod.mod.o ;  true

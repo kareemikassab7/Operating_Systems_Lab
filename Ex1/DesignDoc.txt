@@ -1,0 +1,28 @@
+Main Directories: 
+
+- BackupDir: the directory that contains the files and directories to be backed up, this is where all directories are compressed into tars, encrypted, and where all these encrypted files are put into one tar that is then encrypted again
+
+- RestoreDir: this is where the large encrypted tar file is being moved to be decrypted and restored
+
+- testdir: this was for tests, where for each backup command there is a directory that is named with the history. it didnt work for me because I couldn't share the same history within both scripts, so I chsoe not to make it a static solution, and decided to use the restore dir, as the backed up files are already named with the backup history
+
+
+Backup.sh:
+1- the whole program is written within a large if condition that checks if the parameters are all correct; if not, it tells the user to check them, and shows what parameters should be
+2- we store the 3 parameters in 3 variables to be used within our code
+3- we store the date in a variable that is going to be a part of the name of several files
+4- we loop over the dircetories within the bacckup directory ( first parameter) using a for loop which there is an if -d conditional that checks if this is a directory ;then, it gets the directory name, concatenates it to the date, and that becomes the new name for the new tar file.
+
+5- the same loop gets the tar file, encrypts it, and deletes the tar files and keeps all the encrypted fiels one by one..
+6- finally, it lists the gpg files we made.
+7- we create a big tar file that zips the last created gpg file, and then the other gpg files are added one by one using the tar uvf command, while being added one by one the ones outside are being deleted.
+8- the bigger tar file is being zipped, and then deleted. the zipped file is being encrypted and then deleted, and we end up with an encrypted file that contains everything.
+
+
+Restore.sh:
+1- the whole program is written within a large if condition that checks if the parameters are all correct; if not, it tells the user to check them, and shows what parameters should be
+2- we store the 3 parameters in 3 variables to be used within our code
+3- we get into the backup dir where the last backup is being stored and we mvoe that to our restore direcotry, and then it gets moved to a temporary directory.
+4- in the temporary directory the bigger file is being decrypted and then unzipped releasing the encrypted zipped cirectory files.
+5- we use a for loop over such files to decrypt them, dekete them, and end up with directory zipped files.
+6- the directory zipped files are then unzipped and the contents are moved outside the temp directory and the temp directory is then to be deleted.

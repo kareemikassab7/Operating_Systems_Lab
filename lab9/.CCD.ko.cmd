@@ -1,0 +1,1 @@
+cmd_/home/kareemikassab/OSlab/lab9/CCD.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/kareemikassab/OSlab/lab9/CCD.ko /home/kareemikassab/OSlab/lab9/CCD.o /home/kareemikassab/OSlab/lab9/CCD.mod.o ;  true
